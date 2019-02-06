@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_word_recite"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aiword.WordRecite">
+
+    <TextView
+        android:id="@+id/inputHint1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="输入词根"
+        android:textSize="30dp"
+        />
+    <EditText
+        android:id="@+id/begiWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputHint1"
+        android:textSize="20dp"
+        android:maxLines="1" />
+    <TextView
+        android:id="@+id/inputHint2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/begiWord"
+        android:text="获取单词数量"
+        android:textSize="30dp"/>
+    <EditText
+        android:id="@+id/wordNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputHint2"
+        android:inputType="number"
+        android:textSize="20dp"
+        android:maxLines="1"/>
+    <Button
+        android:text="get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wordNumber"
+        android:id="@+id/get" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/get">  -->
+
+        <TextView
+            android:id="@+id/response_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/get"/>
+
+    </ScrollView>
+
+</RelativeLayout>
