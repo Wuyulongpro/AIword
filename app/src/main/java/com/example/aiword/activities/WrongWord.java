@@ -1,9 +1,11 @@
-package com.example.aiword;
+package com.example.aiword.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.aiword.R;
 
 public class WrongWord extends AppCompatActivity {
 

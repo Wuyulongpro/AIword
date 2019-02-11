@@ -1,12 +1,15 @@
-package com.example.aiword;
+package com.example.aiword.activities;
 
-import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.aiword.OptionAdapter;
+import com.example.aiword.R;
+import com.example.aiword.UserOptions;
 
 import java.util.ArrayList;
 import java.util.List;

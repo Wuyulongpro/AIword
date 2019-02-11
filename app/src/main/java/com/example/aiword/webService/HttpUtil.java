@@ -1,4 +1,4 @@
-package com.example.aiword;
+package com.example.aiword.webService;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

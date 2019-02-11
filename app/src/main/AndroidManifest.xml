@@ -13,29 +13,30 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".WordSet"></activity>
-        <activity android:name=".WrongWord" />
-        <activity android:name=".SignWord" />
-        <activity android:name=".Lib">
+        android:windowSoftInputMode="adjustResize"
+        android:theme="@style/AppBaseTheme.">
+        <activity android:name=".activities.WordSet"></activity>
+        <activity android:name=".activities.WrongWord" />
+        <activity android:name=".activities.SignWord" />
+        <activity android:name=".activities.Lib">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserCenter" />
-        <activity android:name=".RegistActivity"></activity>
+        <activity android:name=".activities.UserCenter" />
+        <activity android:name=".activities.RegistActivity"></activity>
         <activity android:name=".Webtest" />
         <activity android:name=".sqltest" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WordRecite"></activity>
+        <activity android:name=".activities.WordRecite"></activity>
     </application>
 
 </manifest>

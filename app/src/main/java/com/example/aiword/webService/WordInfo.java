@@ -1,4 +1,4 @@
-package com.example.aiword;
+package com.example.aiword.webService;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -17,12 +17,12 @@ import java.util.List;
 public class WordInfo {
 
     /**
-     * attList : [{"wordmeaning":"窘境，困境;捆绑;植物的藤蔓","wordatt":"n.","wordID":288},{"wordmeaning":"约束;装订;捆绑;（用长布条）缠绕","wordatt":"vt.","wordID":288},{"wordmeaning":"（使）结合","wordatt":"vt.& vi.","wordID":288}]
-     * word : {"examplesentence":"0","wordpart":"binding","wordpast_part":"bound","wordpast":"bound","wordplural":"0","wordcomparative":"0","wordsuperlative":"0","wordID":288,"word":"bind","wordthird":"binds","wordread":"0"}
+     * attList : [{"wordmeaning":"操作，处理;巧妙地控制;操纵;[医] 推拿，调整","wordatt":"vt.","wordID":1088}]
+     * word : {"examplesentence":"0","wordpart":"manipulating","wordpast_part":"manipulated","wordpast":"manipulated","wordplural":"0","wordcomparative":"0","wordsuperlative":"0","wordID":1088,"word":"manipulate","wordthird":"manipulates","wordread":"0"}
      */
 
-    private WordBean word;
     private List<AttListBean> attList;
+    private WordBean word;
 
     public static WordInfo objectFromData(String str) {
 
@@ -87,19 +87,20 @@ public class WordInfo {
     public static class WordBean {
         /**
          * examplesentence : 0
-         * wordpart : binding
-         * wordpast_part : bound
-         * wordpast : bound
+         * wordpart : manipulating
+         * wordpast_part : manipulated
+         * wordpast : manipulated
          * wordplural : 0
          * wordcomparative : 0
          * wordsuperlative : 0
-         * wordID : 288
-         * word : bind
-         * wordthird : binds
+         * wordID : 1088
+         * word : manipulate
+         * wordthird : manipulates
          * wordread : 0
          */
 
         private String examplesentence;
+        private String levenshtein;
         private String wordpart;
         private String wordpast_part;
         private String wordpast;
@@ -162,7 +163,12 @@ public class WordInfo {
         public void setExamplesentence(String examplesentence) {
             this.examplesentence = examplesentence;
         }
-
+        public String getLevenshtein(){
+            return levenshtein;
+        }
+        public void setLevenshtein(String levenshtein){
+            this.levenshtein = levenshtein;
+        }
         public String getWordpart() {
             return wordpart;
         }
@@ -246,9 +252,9 @@ public class WordInfo {
 
     public static class AttListBean {
         /**
-         * wordmeaning : 窘境，困境;捆绑;植物的藤蔓
-         * wordatt : n.
-         * wordID : 288
+         * wordmeaning : 操作，处理;巧妙地控制;操纵;[医] 推拿，调整
+         * wordatt : vt.
+         * wordID : 1088
          */
 
         private String wordmeaning;

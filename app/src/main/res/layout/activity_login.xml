@@ -8,26 +8,26 @@
     android:background="#fff"
     android:orientation="vertical"
 
-    tools:context="com.example.aiword.LoginActivity">
+    tools:context="com.example.aiword.activities.LoginActivity">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="登录界面"
-        android:textColor="@android:color/black"
-        android:gravity="center"
-        android:textSize="30sp"
-        />
-    <View android:layout_width="match_parent" android:layout_height="1dp"
-        android:background="@color/orange_main"
-        />
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:layout_marginTop="100dp"
+    android:layout_marginLeft="20dp"
+    android:text="AI单词"
+    android:textColor="@android:color/black"
+    android:gravity="left"
+    android:textSize="30sp"
+    android:typeface="serif"
+    />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_height_normal"
         android:layout_marginLeft="@dimen/margin_large"
         android:layout_marginRight="@dimen/margin_large"
-        android:layout_marginTop="120dp">
+        android:layout_marginTop="20dp">
 
         <ImageView
             android:id="@+id/img_account"
@@ -51,10 +51,9 @@
             android:background="@null"
             android:hint="@string/account"
             android:maxLines="1"
-            android:text="admin"
             android:textColor="@android:color/black"
             android:textColorHint="@color/tv_gray_deep"
-            android:textSize="@dimen/text_size_normal"/>
+            android:textSize="@dimen/text_size_most"/>
 
         <View
             android:layout_width="match_parent"
@@ -94,10 +93,9 @@
             android:hint="@string/password"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:text="admin"
             android:textColor="@android:color/black"
             android:textColorHint="@color/tv_gray_deep"
-            android:textSize="@dimen/text_size_normal"/>
+            android:textSize="@dimen/text_size_most"/>
         <ImageView
             android:id="@+id/iv_see_password"
             android:layout_width="@dimen/image_height_litter"
@@ -148,17 +146,7 @@
             android:textColor="@color/top_bar_normal_bg" android:checked="false"/>
 
     </LinearLayout>
-    <TextView
-        android:id="@+id/nav_to_regist"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="32dp"
-        android:text="还未注册账号？"
-        android:textColor="@android:color/black"
-        android:gravity="center"
-        android:textSize="15sp"
-        />
+
     <Button
         android:id="@+id/login"
         android:layout_width="match_parent"
@@ -171,7 +159,30 @@
         android:text="@string/login"
         android:background="@drawable/btn_orange_selector"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/text_size_normal"/>
+        android:textSize="@dimen/text_size_medium"/>
 
+    <TextView
+    android:id="@+id/nav_to_regist"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="right"
+    android:layout_marginLeft="@dimen/margin_large"
+    android:layout_marginRight="@dimen/margin_large"
+    android:layout_marginTop="@dimen/margin_medium"
+    android:text="新用户注册"
+    android:textColor="@android:color/holo_blue_bright"
+    android:textSize="@dimen/text_size_medium"/>
+
+    <TextView
+        android:id="@+id/forget_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_marginRight="@dimen/margin_large"
+        android:layout_marginTop="-23dp"
+        android:text="忘记密码？"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="@dimen/text_size_medium" />
 
 </LinearLayout>

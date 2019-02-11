@@ -4,7 +4,7 @@
     android:id="@+id/activity_wrongword"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.aiword.WrongWord">
+    tools:context="com.example.aiword.activities.WrongWord">
 
     <ListView
         android:id="@+id/w_word"

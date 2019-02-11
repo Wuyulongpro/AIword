@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawerlayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="true">
 
         <!--中间布局-->
         <RelativeLayout
@@ -15,7 +17,7 @@
                 android:id="@+id/userTitleBar"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:background="@android:color/darker_gray">
+                android:background="@color/blue">
 
                 <ImageView
                     android:id="@+id/leftmenu"
@@ -31,7 +33,7 @@
                     android:gravity="center"
                     android:text="爱单词"
                     android:textSize="20dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/white"/>
 
             </RelativeLayout>
 

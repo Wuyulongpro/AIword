@@ -1,4 +1,4 @@
-package com.example.aiword;
+package com.example.aiword.webService;
 
 public class UserBean {
     private int userID;

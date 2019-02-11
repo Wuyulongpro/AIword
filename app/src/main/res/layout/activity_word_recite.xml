@@ -4,7 +4,7 @@
     android:id="@+id/activity_word_recite"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.aiword.WordRecite">
+    tools:context="com.example.aiword.activities.WordRecite">
 
     <TextView
         android:id="@+id/inputHint1"

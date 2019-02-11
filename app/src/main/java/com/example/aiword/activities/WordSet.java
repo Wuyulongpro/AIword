@@ -1,22 +1,27 @@
-package com.example.aiword;
+package com.example.aiword.activities;
 
 import android.content.Intent;
-import android.net.Uri;
+import android.os.Build;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
-import android.webkit.WebView;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.aiword.ContentAdapter;
+import com.example.aiword.DrawerContent;
+import com.example.aiword.R;
+import com.example.aiword.Webtest;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class WordSet extends AppCompatActivity {
 
@@ -59,7 +64,7 @@ public class WordSet extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WordSet.this,Lib.class);
+                Intent intent = new Intent(WordSet.this, Lib.class);
                // intent.setData(Uri.parse("http://www.baidu.com"));
                 startActivity(intent);
             }
@@ -67,7 +72,7 @@ public class WordSet extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WordSet.this,Webtest.class);
+                Intent intent = new Intent(WordSet.this, Webtest.class);
                 intent.putExtra("User_token",data);
                 intent.putExtra("User_id",id);
                 //intent.setData(Uri.parse("http://www.baidu.com"));
@@ -124,6 +129,20 @@ public class WordSet extends AppCompatActivity {
                 mDrawerLayout.closeDrawer(Gravity.LEFT);
             }
         });
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            // 透明状态栏
+            this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            //透明导航栏
+            this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            //系统条着色管理器 需要添加依赖  SystemBarTint.jar
+            SystemBarTintManager tintManager = new SystemBarTintManager(this);
+            // 激活状态栏
+            tintManager.setStatusBarTintEnabled(true);
+            //  激活导航栏
+            tintManager.setNavigationBarTintEnabled(true);
+            //通知栏所需颜色//如果没有设置颜色将是直接透明的
+            tintManager.setStatusBarTintResource(R.color.blue);
+        }
     }
     private void initData(){
         drawerList.add(new DrawerContent(R.drawable.user_im,"id",1));

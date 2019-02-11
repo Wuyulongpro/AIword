@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.aiword.database.MyDatabaseHelper;
+
 public class sqltest extends AppCompatActivity {
     private MyDatabaseHelper dbHelper;
     @Override

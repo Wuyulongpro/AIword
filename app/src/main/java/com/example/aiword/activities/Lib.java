@@ -1,4 +1,4 @@
-package com.example.aiword;
+package com.example.aiword.activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+
+import com.example.aiword.R;
 
 public class Lib extends AppCompatActivity {
     private WebView webView;

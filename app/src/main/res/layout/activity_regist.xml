@@ -8,12 +8,12 @@
     android:background="#fff"
     android:orientation="vertical"
 
-    tools:context="com.example.aiword.RegistActivity">
+    tools:context="com.example.aiword.activities.RegistActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="注册界面"
+        android:text="用户注册"
         android:textColor="@android:color/black"
         android:gravity="center"
         android:textSize="30sp"
@@ -153,16 +153,7 @@
             android:layout_toRightOf="@+id/img_phone"
             android:background="@color/orange_light"/>
     </RelativeLayout>
-    <TextView
-        android:id="@+id/nav_to_login"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="32dp"
-        android:text="已拥有账号？"
-        android:textColor="@android:color/black"
-        android:textSize="15sp"
-        />
+
     <Button
         android:id="@+id/regist"
         android:layout_width="match_parent"

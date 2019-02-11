@@ -1,4 +1,4 @@
-package com.example.aiword;
+package com.example.aiword.activities;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -13,13 +13,21 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.aiword.webService.HttpUtil;
+import com.example.aiword.R;
+import com.example.aiword.webService.WordInfo;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+
+import org.json.JSONArray;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.Call;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.Response;
 
 public class WordRecite extends AppCompatActivity {
@@ -37,9 +45,22 @@ public class WordRecite extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             String ReturnMessage = (String) msg.obj;
-            Log.i("获取的返回信息", ReturnMessage);
-            WordInfo wordInfo = new Gson().fromJson(ReturnMessage, WordInfo.class);
-
+            //Json的解析类对象
+            Log.i("eeee", ReturnMessage);
+            JsonParser parser = new JsonParser();
+            //将JSON的String 转成一个JsonArray对象
+            JsonArray jsonArray = parser.parse(ReturnMessage).getAsJsonArray();
+            Gson gson = new Gson();
+            ArrayList<WordInfo> wordInfoList = new ArrayList<>();
+            for(JsonElement word : jsonArray) {
+                WordInfo wordInfo = gson.fromJson(word, WordInfo.class);
+                wordInfoList.add(wordInfo);
+                List<WordInfo.AttListBean> attListBeans = wordInfo.getAttList();
+                for(WordInfo.AttListBean attList : attListBeans){
+                    Log.i("单词意思", attList.getWordatt());
+                }
+                Log.i("qqqq", wordInfo.getWord().getLevenshtein());
+            }
         }
     };
 
@@ -69,7 +90,7 @@ public class WordRecite extends AppCompatActivity {
                     }
                     else {
                         num = Integer.parseInt(temp);
-                         HttpUtil.sendOkHttpRequestWithHeader("http://129.211.113.93:8080/word/getword?type=1&userID=" + id + "&beginword=" + beginWord + "&num=" + num, "token", token, new okhttp3.Callback(){
+                         HttpUtil.sendOkHttpRequestWithHeader("http://129.211.113.93:8080/word/getword?type=cet4&userID=" + id + "&beginword=" + beginWord + "&num=" + num, "token", token, new okhttp3.Callback(){
                              @Override
                              public void onResponse(Call call, Response response) throws IOException {
                                  mHandler.obtainMessage(1, response.body().string()).sendToTarget();

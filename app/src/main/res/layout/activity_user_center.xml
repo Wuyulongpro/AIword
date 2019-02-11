@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.aiword.UserCenter">
+    tools:context="com.example.aiword.activities.UserCenter">
 
     <RelativeLayout
         android:id="@+id/userTitleBar"
